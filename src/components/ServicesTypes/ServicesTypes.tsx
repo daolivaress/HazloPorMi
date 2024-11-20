@@ -123,7 +123,7 @@ const ServicesTypes = () => {
             (serviceType) => serviceType.name === selectedServiceType
           )?.services.map((service, index) => (
             <div key={index} className="flex items-center gap-2 mt-2 mx-2">
-              <button className="font-medium border border-black rounded-full py-2 px-4 text-sm transition-all hover:bg-[#daeee9] hover:border-[#0d7a5f] hover:text-[#2b4c32] md:text-base " onClick={() => navigate("/create-task")}>
+              <button className="font-medium border border-black rounded-full py-2 px-4 text-sm transition-all hover:bg-[#daeee9] hover:border-[#0d7a5f] hover:text-[#2b4c32] md:text-base " onClick={() => navigate("/create-task/details")}>
                 {service}
               </button>
             </div>

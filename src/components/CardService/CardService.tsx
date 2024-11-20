@@ -8,7 +8,7 @@ type CardServiceProps = {
 
 const CardService = ({ name, price, imageURL }: CardServiceProps) => {
   return (
-    <Link to={"/create-task"}>
+    <Link to={"/create-task/details"}>
       <div className="container cursor-pointer bg-[#e1eeea] h-[250px] w-[220px] rounded-xl shadow-lg transition-all hover:scale-105">
         <div>
           <img

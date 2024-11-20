@@ -1,14 +1,24 @@
 import BaseLayout from "../../layout/BaseLayout";
 import { useState } from "react";
 import { ServicesTypesList } from "../../components/ServicesTypes/ServicesTypes";
+import { BsPencilSquare } from "react-icons/bs";
+import { useNavigate } from "react-router-dom";
 
 const CreateTaskPage = () => {
   const [step, setStep] = useState(1);
   const [selectedServiceType, setSelectedServiceType] = useState("Ensamblaje");
+  const navigate = useNavigate();
   return (
     <BaseLayout>
-      <section className="h-[100vh] bg-[#f5f7f6] py-8">
-        <h1 className="font-semibold text-3xl ml-10 mb-6 lg:ml-28">
+      <section className=" bg-[#f5f7f6] h-[105vh]">
+        <div className="bg-white border border-b border-neutral-300 py-6 text-neutral-700 flex justify-center items-center gap-3">
+          <BsPencilSquare className="size-6 max-md:ml-6" />
+          <p className="w-[600px] flex-shrink max-md:text-sm">
+            Cuéntanos sobre tu tarea. Usamos estos detalles para mostrarte
+            trabajadores en tu área que se ajusten a tus necesidades.
+          </p>
+        </div>
+        <h1 className="font-semibold text-3xl ml-10 mt-6 mb-6 lg:ml-28">
           Crear tarea
         </h1>
         <div className="flex flex-col justify-center items-center px-8 gap-8 lg:px-24">
@@ -81,9 +91,12 @@ const CreateTaskPage = () => {
             </div>
             <textarea
               placeholder="Brindanos un resumen de lo que necesitas. Asegurate de incluir detalles como el tamaño de tu espacio, equipamiento necesario y como entrar"
-              className="my-4 border p-4 rounded-md"
+              className="my-4 border p-4 rounded-md resize-none"
             ></textarea>
-            <button className="bg-[#0d7a5f] text-white w-fit mx-auto px-8 rounded-full mt-4 py-2 transition-all font-semibold antialiased hover:bg-[#164d3f]">
+            <button
+              className="bg-[#0d7a5f] text-white w-fit mx-auto px-8 rounded-full mt-4 py-2 transition-all font-semibold antialiased hover:bg-[#164d3f]"
+              onClick={() => navigate("/create-task/select-worker")}
+            >
               Confirmar
             </button>
           </div>

@@ -2,6 +2,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import HomePage from "./pages/HomePage/HomePage";
 import SignUpLoginPage from "./pages/SignUpLoginPage/SignUpLoginPage";
 import CreateTaskPage from "./pages/CreateTaskPage/CreateTaskPage";
+import SelectWorkerPage from "./pages/SelectWorkerPage/SelectWorkerPage";
 
 const router = createBrowserRouter([
   {
@@ -21,8 +22,12 @@ const router = createBrowserRouter([
     element: <SignUpLoginPage/>,
   },
   {
-    path: "/create-task",
+    path: "/create-task/details",
     element: <CreateTaskPage/>,
+  },
+  {
+    path: "/create-task/select-worker",
+    element: <SelectWorkerPage/>,
   }
 ]);
 
